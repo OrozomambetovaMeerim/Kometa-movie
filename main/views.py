@@ -121,9 +121,9 @@ class Search(ListView):
 def search(request):
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
-        movie = Movie.objects.filter(Q(name__icontains=q) | Q(description__icontains=q))
+        movies = Movie.objects.filter(Q(name__icontains=q) | Q(description__icontains=q))
         return render(request, 'main/search_field.html',
-            {'movie': movie, 'query': q})
+            {'movies': movies, 'query': q})
     else:
         return HttpResponse('Такого фильма нет.')
 
