@@ -42,6 +42,7 @@
 				<div class="sidebar">
 					<h2>Поиск</h2>
 					<form method="post" action="#" id="search_form" >
+						{% csrf_token %}
 						<input type="search" name="search_field" placeholder="ваш запрос" />
 						<input type="submit" class="btn" value="найти" />
 					</form>
@@ -49,8 +50,8 @@
 
 				<div class="sidebar">
 					<h2>Вход</h2>
-					<form method="post" action="#" id="login">
-						
+				<form method="post" action="#" id="login">
+					{% csrf_token %}	
 						<input type="text" name="login_field" placeholder="логин" />
 						<input type="password" name="password_field" placeholder="пароль" />
 						<input type="submit" class="btn" value="вход" />
@@ -122,8 +123,9 @@
 					</div>
 				</div>
 	
-				<div class="send">	
+				<div class="send">
 					<form method="post" action="#" id="review">
+						{% csrf_token %}
 						<input type="text" name="review_name" placeholder="ваше имя">
 						<textarea name="review_text"></textarea>
 						<input class="btn" type="submit" value="отправить">
@@ -155,3 +157,14 @@
 	
 </body>
 </html>
+<!-- def csrf_failure(request, reason=""):
+    """
+    Default view used when request fails CSRF protection
+    """
+    from django.middleware.csrf import REASON_NO_REFERER
+    t = Template(CSRF_FAILURE_TEMPLATE)
+    c = Context({'DEBUG': settings.DEBUG,
+                 'reason': reason,
+                 'no_referer': reason == REASON_NO_REFERER
+                 })
+    return HttpResponseForbidden(t.render(c), content_type='text/html') -->

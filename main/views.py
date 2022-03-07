@@ -166,3 +166,4 @@ class DialogsViews(View):
     def get(self, request):
         message = Message.objects.get(id=id)
         return render(request, 'main/message.html', {'get': message})
+
