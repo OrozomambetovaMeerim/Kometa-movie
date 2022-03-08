@@ -25,7 +25,7 @@ def contact(request):
        message_form = MessageForm(request.POST)
        if message_form.is_valid():
            message_form.save()
-           return redirect(message)
+           return redirect(contact)
 
     message_form = MessageForm()
     return render(request, "main/contact.html")
@@ -36,6 +36,13 @@ def base(request):
 
 
 def show(request):
+    if request.method == "POST":
+       message_form = MessageForm(request.POST)
+       if message_form.is_valid():
+           message_form.save()
+           return redirect(show)
+
+    message_form = MessageForm()
     return render(request, "main/show.html")
 
 
@@ -143,10 +150,10 @@ def message(request):
        message_form = MessageForm(request.POST)
        if message_form.is_valid():
            message_form.save()
-           return redirect(contact)
+           return redirect(message)
 
     message_form = MessageForm()
-    return render(request, 'main/message.html', {'message_form': message_form})
+    return render(request, 'main/show.html', {'message_form': message_form})
 
 
 

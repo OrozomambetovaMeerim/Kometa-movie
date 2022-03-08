@@ -45,6 +45,10 @@
 <body>
     <form action="{% url 'reviews' %}" method="get">
     {% csrf_token %}
+        <input type="text" name="author_name" placeholder="ваше имя">
+        <input type="text" name="email" placeholder="ваш email">
+        <textarea name="message"></textarea>
+        <input class="btn" type="submit" value="посмотреть">
     <h2>Отзывы пользователей:</h2>
         {{ message_form.as_p }}
     {% for message in message_form %}

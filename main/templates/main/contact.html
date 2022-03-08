@@ -90,11 +90,11 @@
 				<p>Отправьте ваш отзыв о портале КиноМонстр</p>
 	
 				<div class="send send_contact">	
-					<form method="post" action="{% url 'reviews' %}" id="contact">
+					<form method="post" action="{% url 'contact' %}" id="contact">
 					{% csrf_token %}
-						<input type="text" name="review_name" placeholder="ваше имя">
-						<input type="text" name="review_email" placeholder="ваш email">
-						<textarea name="review_text"></textarea>
+						<input type="text" name="author_name" placeholder="ваше имя">
+						<input type="text" name="email" placeholder="ваш email">
+						<textarea name="message"></textarea>
 						<input class="btn" type="submit" value="отправить">
 					</form>
 				</div>
