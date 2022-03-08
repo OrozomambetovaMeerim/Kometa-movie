@@ -74,7 +74,7 @@
 					<ul>
 						<li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="#">Безумный Макс</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
@@ -124,10 +124,10 @@
 				</div>
 	
 				<div class="send">
-					<form method="post" action="#" id="review">
-						{% csrf_token %}
-						<input type="text" name="review_name" placeholder="ваше имя">
-						<textarea name="review_text"></textarea>
+					<form method="post" action="{% url 'show' %}" id="review">
+					{% csrf_token %}
+						<input type="text" name="author_name" placeholder="ваше имя">
+						<textarea name="message"></textarea>
 						<input class="btn" type="submit" value="отправить">
 					</form>
 				</div>
