@@ -6,14 +6,14 @@
     <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <title>КиноМонстр</title>
         <meta name="description" content="Киномонстр - это портал о кино" />
         <meta name="keywords" content="фильмы, фильмы онлайн, hd" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
     </head>
     <body>
@@ -69,26 +69,6 @@
     
                         </form>
                     </div>
-                    <form class="form-inline my-2 my-lg-0 mr-sm-2" action="{% url 'products' %}">
-                        {% csrf_token %}
-                        <input class="form-control mr-sm-2" type="text" name="query">
-                        <button class="btn btn-success my-2 my-sm-0">Поиск</button>
-                      </form>
-                      {% if request.user.is_authenticated %}
-                        <a class="btn btn-info mr-sm-2" href="{% url 'profile' request.user.pk %}">
-                          {{ request.user.username }}
-                        </a>
-                        <a class="btn btn-danger" href="{% url 'logout' %}">
-                          Выход
-                        </a>
-                      {% else %}
-                        <a class="btn btn-primary mr-sm-2" href="{% url 'login' %}">
-                          Вход
-                        </a>
-                        <a class="btn btn-primary" href="{% url 'registration' %}">
-                          Регистрация
-                        </a>
-                      {% endif %}
     
                     <div class="sidebar">
                         <h2>Новости</h2>
