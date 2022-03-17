@@ -16,6 +16,8 @@ class Movie(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     views_count = models.IntegerField(default=0)
     is_publicated = models.BooleanField(default=True)
+    url = models.URLField(blank=True)
+ 
 
     def __str__(self):
         return self.name

@@ -33,7 +33,7 @@ from .models import Movie, Message
 class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
-        fields = ['img', 'description']
+        fields = ['name', 'img', 'description', 'genre', 'produser', 'year']
 
 
 class SearchForm(forms.Form):
@@ -43,6 +43,6 @@ class SearchForm(forms.Form):
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
-        fields = ['message', 'author_name']
+        fields = ['message', 'author_name', 'email']
     
 

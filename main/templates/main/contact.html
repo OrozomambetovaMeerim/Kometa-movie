@@ -3,11 +3,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<title>Отзывы</title>
 	<meta name="description" content="Киномонстр - это портал о кино" />
 	<meta name="keywords" content="фильмы, фильмы онлайн, hd" />
-	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
 	<!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
 </head>
 <body>
@@ -90,11 +93,11 @@
 				<p>Отправьте ваш отзыв о портале КиноМонстр</p>
 	
 				<div class="send send_contact">	
-					<form method="post" action="{% url 'reviews' %}" id="contact">
-					{% csrf_token %}
-						<input type="text" name="review_name" placeholder="ваше имя">
-						<input type="text" name="review_email" placeholder="ваш email">
-						<textarea name="review_text"></textarea>
+					<form method="post" action="{% url 'contact' %}" id="contact">
+						{% csrf_token %}
+						<input type="text" name="author_name" placeholder="ваше имя">
+						<input type="text" name="email" placeholder="ваш email">
+						<textarea name="message"></textarea>
 						<input class="btn" type="submit" value="отправить">
 					</form>
 				</div>
