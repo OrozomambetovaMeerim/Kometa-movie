@@ -25,14 +25,7 @@ SECRET_KEY = 'django-insecure-m6e%f3i!1^$g_-7!k%)7r2e+5qft9+vyov7@%d7b7)%t#n97k0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'meerimorozomambetova@gmail.com'
-# EMAIL_HOST_PASSWORD = 'kameta2022'
-# если используется защищенное соединение
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -48,9 +41,7 @@ INSTALLED_APPS = [
     'main',
     'bootstrap4',
     'auth1',
-    # 'crispy_forms',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
