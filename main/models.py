@@ -12,11 +12,12 @@ class Movie(models.Model):
     produser = models.CharField(max_length=255)
     year = models.IntegerField()
     img = models.ImageField(upload_to='main', null=True, blank=True )
-    videofile= models.FileField(upload_to='videos/', null=True, verbose_name="видео")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     views_count = models.IntegerField(default=0)
     is_publicated = models.BooleanField(default=True)
+    url = models.URLField(blank=True)
+ 
 
     def __str__(self):
         return self.name

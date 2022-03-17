@@ -40,7 +40,18 @@ urlpatterns = [
     path('search/', search, name='search_field'),
     path('message/', message, name="reviews"),
     path('<int:id>/get_message/', DialogsViews.as_view(), name='message'),
-    # path("login/", login, name="login"),
+    
+
+     # Auth
+    path('signup/', signupuser, name="signupuser"),
+    path('logout/', logoutuser, name="logoutuser"),
+    path('login/', loginuser, name="loginuser"),
+    # path('current/', current, name="current"),
+    # path('base/', base, name="base"),
+    # path('signup/', signupuser, name='signupuser'),
+    # path('login/', loginuser, name='loginuser'),
+    # path('logout/', logoutuser, name='logoutuser'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
